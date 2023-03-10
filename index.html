@@ -39,8 +39,10 @@
 
 			function drawGrids(){
 
-			let n = 15;
-			let m = 15;
+			context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+			
+			let n = 30;
+			let m = 30;
 				for(let i = 0; i< 	n; i++){
 					for(let j = 0; j< m; j++){
 						let width = 80;
@@ -54,7 +56,7 @@
 						context.stroke();
 
 						let smaller = 10;
-						if(Math.random()>0.5){
+						if(Math.random()>0.8){
 							context.beginPath();
 							context.rect(x+smaller,y+smaller,width-smaller*2,height-smaller*2);
 							context.stroke();
@@ -73,6 +75,11 @@
 			context.strokeStyle = 'red';			
 			context.lineWidth = 3;
 			drawGrids();
+			var intervalId = window.setInterval(function(){
+				context.strokeStyle = 'red';			
+				context.lineWidth = 3;
+				drawGrids();
+			}, 200);
 
 
 		</script>
