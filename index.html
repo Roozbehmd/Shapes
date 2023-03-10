@@ -1,0 +1,80 @@
+<html>
+	<body style="background-color:black;">
+		<canvas width="1920", height="1080"></canvas>
+		<script>
+
+			let myCanvas = document.querySelector('canvas');
+			let context = myCanvas.getContext('2d');
+
+			context.canvas.width  = window.innerWidth;
+			context.canvas.height  = window.innerHeight;
+
+
+
+			function doSomethingAsshole(doWhat){
+				console.log(doWhat);
+							context.fillStyle = 'blue';
+			context.fillRect(100,100,400,400);
+
+			context.beginPath();
+			context.rect(100,100,400,400);
+			context.stroke();
+
+			context.beginPath();
+			context.arc(300,300,100,0,Math.PI*2);
+			context.stroke();
+			
+
+			}
+
+						let year = 2023;
+			let nextYear = year+1;
+			let name = "Rooz";
+			let dinner = "kabab";
+			let iceManagement = "Motherfucker";
+			let sentence  = name + " is not " + iceManagement;
+			//doSomethingAsshole(sentence);
+
+			
+
+			function drawGrids(){
+
+			let n = 15;
+			let m = 15;
+				for(let i = 0; i< 	n; i++){
+					for(let j = 0; j< m; j++){
+						let width = 80;
+						let height = 80;
+						let gap = 25;
+						let x = gap + (width+gap)*i;
+						let y = gap + (height+gap)*j;
+
+						context.beginPath();
+						context.rect(x,y,width,height);
+						context.stroke();
+
+						let smaller = 10;
+						if(Math.random()>0.5){
+							context.beginPath();
+							context.rect(x+smaller,y+smaller,width-smaller*2,height-smaller*2);
+							context.stroke();
+
+						}
+
+
+					}
+
+				}
+
+
+
+
+			}
+			context.strokeStyle = 'red';			
+			context.lineWidth = 3;
+			drawGrids();
+
+
+		</script>
+	</body>
+</html>
